@@ -234,5 +234,34 @@ if(typeof QRCode!=="undefined"){
 
 
 
+<script>
+function recordDiagnosis() {
+  const result = document.getElementById('percent').textContent;
+  const selected = document.querySelector('.mode.active');
+  const type = selected?.dataset.mode === 'sex'
+    ? 'SEX相性診断' : '恋愛診断';
+
+  const data = new URLSearchParams();
+  data.append('entry.2093081421', type);
+  data.append('entry.8946764', result);
+  data.append('entry.458510810', new Date().toLocaleString('ja-JP'));
+
+  fetch('https://docs.google.com/forms/d/e/1FAIpQLSckLaxS2gDYzd5K70moPZ4mMiRAWOT_vxVQaEmgzTmi6pa4GQ/formResponse', {
+    method: 'POST',
+    mode: 'no-cors',
+    body: data
+  }).catch(console.error);
+}
+
+document.getElementById('form')
+  .addEventListener('submit', () => {
+    setTimeout(recordDiagnosis, 100);
+  });
+
+document.getElementById('again')
+  .addEventListener('click', () => {
+    setTimeout(recordDiagnosis, 100);
+  });
+</script>
 </body>
 </html>
