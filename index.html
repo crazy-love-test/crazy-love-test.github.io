@@ -13,22 +13,6 @@ let mode='love';
 const $=id=>document.getElementById(id);
 let special=localStorage.getItem('crazy-love-special')!=='off';
 
-const formURL='https://docs.google.com/forms/d/e/1FAIpQLSckLaxS2gDYzd5K70moPZ4mMiRAWOT_vxVQaEmgzTmi6pa4GQ/formResponse';
-
-function saveResult(a,b,pct){
-  const data=new URLSearchParams();
-  data.append('entry.1870568518',a);
-  data.append('entry.65970182',b);
-  data.append('entry.2093081421',mode==='love'?'恋愛診断':'SEX相性診断');
-  data.append('entry.8946764',pct+'%');
-  data.append('entry.458510810',new Date().toLocaleString('ja-JP'));
-
-  fetch(formURL,{
-    method:'POST',
-    mode:'no-cors',
-    body:data
-  }).catch(err=>console.error('記録送信エラー',err));
-}
 
 document.querySelectorAll('.mode').forEach(b=>b.addEventListener('click',()=>{
   mode=b.dataset.mode;
@@ -67,7 +51,7 @@ function diagnose(){
   $('result').classList.add('show');
   hearts();
 
-  saveResult(a,b,pct);
+  
 }
 
 $('form').addEventListener('submit',e=>{
