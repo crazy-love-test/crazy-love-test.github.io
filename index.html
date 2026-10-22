@@ -234,52 +234,5 @@ if(typeof QRCode!=="undefined"){
 
 
 
-<script>
-function recordDiagnosis() {
-  const result = document.getElementById('percent').textContent;
-  const selected = document.querySelector('.mode.active');
-  const type = selected?.dataset.mode === 'sex'
-    ? 'SEX相性診断' : '恋愛診断';
-
-  const data = new URLSearchParams();
-  data.append('entry.2093081421', type);
-  data.append('entry.8946764', result);
-  data.append('entry.458510810', new Date().toLocaleString('ja-JP'));
-
-  const iframe = document.createElement('iframe');
-iframe.name = 'googleFormReceiver';
-iframe.style.display = 'none';
-document.body.appendChild(iframe);
-
-const form = document.createElement('form');
-form.action = 'https://docs.google.com/forms/d/e/1FAIpQLSckLaxS2gDYzd5K70moPZ4mMiRAWOT_vxVQaEmgzTmi6pa4GQ/formResponse';
-form.method = 'POST';
-form.target = iframe.name;
-form.style.display = 'none';
-
-for (const [key, value] of data) {
-  const input = document.createElement('input');
-  input.name = key;
-  input.value = value;
-  form.appendChild(input);
-}
-
-document.body.appendChild(form);
-form.submit();
-form.remove();
-
-setTimeout(() => iframe.remove(), 10000);
-}
-
-document.getElementById('form')
-  .addEventListener('submit', () => {
-    setTimeout(recordDiagnosis, 100);
-  });
-
-document.getElementById('again')
-  .addEventListener('click', () => {
-    setTimeout(recordDiagnosis, 100);
-  });
-</script>
 </body>
 </html>
