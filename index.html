@@ -8,4 +8,154 @@
 </style></head>
 <body><main class="wrap"><div class="kisses">💋 💗 💋</div><h1 id="title">クレイジー恋愛診断</h1><p class="sub">Crazy Love Compatibility Test</p><section class="panel"><div class="modes"><button type="button" class="mode active" data-mode="love">💕 恋愛相性<span class="en">Love Compatibility</span></button><button type="button" class="mode" data-mode="sex">💋 SEX相性<span class="en">Sexual Compatibility</span></button></div><form id="form"><div class="field"><label for="name1">あなたの名前 <small>/ Your Name</small></label><input id="name1" maxlength="40" autocomplete="off" placeholder="名前を入力 / Enter your name" required></div><div class="field"><label for="name2">相手の名前 <small>/ Partner's Name</small></label><input id="name2" maxlength="40" autocomplete="off" placeholder="名前を入力 / Enter their name" required></div><button class="go" type="submit">💗 禁断の相性をチェック 💗<span class="en">Check Your Secret Chemistry</span></button></form><div id="result" class="result" aria-live="polite"><div id="resultLabel" class="label">💕 恋愛相性 / Love Compatibility</div><div id="percent" class="percent">98%</div><button class="again" id="again" type="button">もう一度診断 / Try Again ↻</button></div></section><div class="foot">💗 💕 ❤️‍🔥 💕 💗</div><div id="admin">🔒 管理用設定 / Private Settings<br><span id="status"></span><br><button id="toggle" type="button">切り替え / Toggle</button><br><small>この設定はこの端末だけに保存されます。コードを調べると仕組みは分かります。</small></div></main><script>
 (()=>{'use strict';let mode='love';const $=id=>document.getElementById(id);let special=localStorage.getItem('crazy-love-special')!=='off';document.querySelectorAll('.mode').forEach(b=>b.addEventListener('click',()=>{mode=b.dataset.mode;document.querySelectorAll('.mode').forEach(x=>x.classList.toggle('active',x===b));$('result').classList.remove('show')}));function hearts(){const icons=['💗','💕','💖','💘','❤️‍🔥','💋'];for(let i=0;i<125;i++){const h=document.createElement('span');h.className='heart';h.textContent=icons[Math.floor(Math.random()*icons.length)];h.style.left=Math.random()*100+'vw';h.style.fontSize=(14+Math.random()*28)+'px';h.style.animationDuration=(2.5+Math.random()*3.5)+'s';h.style.animationDelay=(Math.random()*2)+'s';h.style.setProperty('--drift',(Math.random()*200-100)+'px');document.body.append(h);setTimeout(()=>h.remove(),6500)}}function diagnose(){const a=$('name1').value.trim(),b=$('name2').value.trim();if(!a||!b){$('form').reportValidity();return}const isShin=a==='しんちゃん'||b==='しんちゃん';const pct=special&&isShin?100:Math.floor(Math.random()*101);$('resultLabel').textContent=mode==='love'?'💕 恋愛相性 / Love Compatibility':'💋 SEX相性 / Sexual Compatibility';$('percent').textContent=pct+'%';$('result').classList.remove('show');void $('result').offsetWidth;$('result').classList.add('show');hearts()}$('form').addEventListener('submit',e=>{e.preventDefault();diagnose()});$('again').addEventListener('click',diagnose);let taps=0,last=0;$('title').addEventListener('click',()=>{if(Date.now()-last>2500)taps=0;last=Date.now();if(++taps>=7){$('admin').classList.toggle('show');taps=0;update()}});function update(){$('status').textContent='しんちゃん100%: '+(special?'ON':'OFF')}$('toggle').addEventListener('click',()=>{special=!special;localStorage.setItem('crazy-love-special',special?'on':'off');update()});})();
-</script></body></html>
+</script>
+  
+<!-- 💋 Love Tip START -->
+
+<!-- 💋 Love Tip -->
+<section id="loveTip" style="max-width:480px;margin:35px auto;padding:25px 15px;background:linear-gradient(135deg,#ffe0f0,#ffb6dc);border:3px solid #ff1493;border-radius:25px;text-align:center;color:#a00058;box-shadow:0 0 25px #ff69b477;">
+
+<h2>💋 愛のチップ 💋</h2>
+<h2>Love Tip ❤️</h2>
+
+<p>あなたの愛をちょっぴり分けてね 💕</p>
+<p>Send a little love our way! 💖</p>
+<p>チップは任意です / Tips are optional</p>
+
+<hr>
+
+<h3>⚡ Lightning Bitcoin</h3>
+<p>ライトニングで愛を贈る 💕</p>
+<p>Send Love with Lightning!</p>
+
+<p id="ltLightning" style="overflow-wrap:anywhere;font-size:14px;">
+insidebedroom05@walletofsatoshi.com
+</p>
+
+<button type="button" onclick="ltCopy('ltLightning')">
+⚡ コピー / Copy Address
+</button>
+
+<p>⚡ Lightning QR Code</p>
+<div id="ltLightningQR" class="ltQR"></div>
+
+<hr>
+
+<h3>₿ Bitcoin (BTC)</h3>
+<p>ビットコインで愛を贈る ❤️</p>
+<p>Send Love with Bitcoin!</p>
+
+<p id="ltBitcoin">Bitcoinアドレス未設定</p>
+
+<button type="button" id="ltBtcButton" disabled
+onclick="ltCopy('ltBitcoin')">
+₿ コピー / Copy Address
+</button>
+
+<div id="ltBitcoinQR" class="ltQR"></div>
+
+<hr>
+
+<h3>💙 PayPal</h3>
+<p>PayPalで愛を贈る 💋</p>
+<p>Send a Love Tip with PayPal!</p>
+
+<a href="https://paypal.me/s300h150"
+target="_blank"
+rel="noopener noreferrer"
+style="display:inline-block;background:#ff1493;color:white;padding:17px 25px;border-radius:30px;font-size:18px;font-weight:bold;text-decoration:none;">
+💋 愛のチップを贈る / Send Love
+</a>
+
+<p style="margin-top:25px;font-size:25px;">💖 💋 💖</p>
+<p>あなたの愛にありがとう ❤️</p>
+<p>Thank you for your love!</p>
+
+</section>
+
+<style>
+#loveTip button {
+ background:#ff1493;
+ color:white;
+ border:0;
+ border-radius:25px;
+ padding:14px 20px;
+ font-size:16px;
+ font-weight:bold;
+ margin:10px;
+ cursor:pointer;
+}
+#loveTip button:disabled {
+ opacity:0.5;
+ cursor:not-allowed;
+}
+#loveTip .ltQR {
+ display:flex;
+ justify-content:center;
+ margin:15px auto;
+}
+#loveTip .ltQR img {
+ max-width:100%;
+}
+#loveTip hr {
+ border:0;
+ border-top:1px solid #ff80bd;
+ margin:25px 0;
+}
+</style>
+
+<script>
+function ltCopy(id) {
+ const value=document.getElementById(id).textContent.trim();
+ if(navigator.clipboard && window.isSecureContext){
+  navigator.clipboard.writeText(value)
+   .then(()=>alert("💋 コピーしました！ / Copied!"))
+   .catch(()=>ltFallback(value));
+ }else{
+  ltFallback(value);
+ }
+}
+function ltFallback(value){
+ const el=document.createElement("textarea");
+ el.value=value;
+ el.style.position="fixed";
+ el.style.opacity="0";
+ document.body.appendChild(el);
+ el.select();
+ const ok=document.execCommand("copy");
+ el.remove();
+ alert(ok?"💋 コピーしました！ / Copied!":"コピーできません / Copy failed");
+}
+function ltInitQR(){
+ if(typeof QRCode==="undefined")return;
+ new QRCode(document.getElementById("ltLightningQR"),{
+  text:"insidebedroom05@walletofsatoshi.com",
+  width:170,
+  height:170
+ });
+ // Bitcoinアドレスを設定するとQRを表示
+ const btc=document.getElementById("ltBitcoin").textContent.trim();
+ if(btc!=="Bitcoinアドレス未設定" && btc){
+  document.getElementById("ltBtcButton").disabled=false;
+  new QRCode(document.getElementById("ltBitcoinQR"),{
+   text:"bitcoin:"+btc,
+   width:170,
+   height:170
+  });
+ }
+}
+if(typeof QRCode!=="undefined"){
+ ltInitQR();
+}else{
+ const s=document.createElement("script");
+ s.src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js";
+ s.onload=ltInitQR;
+ document.head.appendChild(s);
+}
+</script>
+<!-- 💋 Love Tip END -->
+
+
+
+</body>
+</html>
