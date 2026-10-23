@@ -1,141 +1,137 @@
 <!doctype html>
 <html lang="ja">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>クレイジー恋愛診断 | Crazy Love Test</title>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>クレイジー恋愛診断 | Crazy Love Test</title>
 <style>
-:root{color-scheme:dark;--hot:#ff3c99;--pink:#ff91c6}*{box-sizing:border-box}body{margin:0;min-height:100svh;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;color:#fff;background:radial-gradient(circle at 50% 0%,#8d165d 0%,#370c2d 46%,#140713 100%);overflow-x:hidden}.wrap{max-width:500px;margin:auto;padding:40px 20px 70px;text-align:center}h1{position:relative;top:25px;font-size:clamp(28px,7vw,39px);margin:15px 0 40px;color:#ffd4e9;text-shadow:0 0 20px #fa2687}.sub{font-size:15px;color:#ffb5d7;margin:0 0 28px}.panel{margin-top:40px;}.panel{background:linear-gradient(145deg,#5d1648db,#290d29ee);border:1px solid #f765aa88;box-shadow:0 14px 55px #10010f99, inset 0 0 22px #ff4ca318;border-radius:28px;padding:24px 20px}.modes{display:flex;gap:8px;margin-bottom:25px}.mode{flex:1;border:1px solid #ff82ba;background:#421134;color:#ffd5e8;border-radius:14px;padding:13px 5px;font-size:13px;font-weight:700;cursor:pointer}.mode.active{background:linear-gradient(135deg,#ff4fa4,#e31770);border-color:#ffb2d5;box-shadow:0 0 18px #ff4a9b88}.field{text-align:left;margin:18px 0}.field label{display:block;color:#ffd2e7;font-weight:700;font-size:14px;margin-bottom:8px}.field small{font-size:12px;color:#ffa6cc;font-weight:400}.field input{width:100%;font-size:17px;padding:15px;border-radius:13px;border:1px solid #ff83b8;background:#1e0b20;color:white;outline:none}.field input:focus{border-color:#fff;box-shadow:0 0 0 3px #fa46985c}button.go{width:100%;margin-top:16px;padding:17px 10px;border:0;border-radius:18px;color:white;font-size:18px;font-weight:800;background:linear-gradient(100deg,#ff60ae,#f31d83,#e0106d);box-shadow:0 8px 28px #fb167b77;cursor:pointer}.go:active{transform:scale(.98)}.en{display:block;font-size:12px;font-weight:500;margin-top:5px}.result{display:none;margin-top:25px;padding:20px 10px;border:1px solid #ff8fc2;border-radius:22px;background:#240c23}.result.show{display:block;animation:pop .4s ease}.result .label{color:#ffbbd9;font-size:15px}.percent{font-size:clamp(75px,20vw,112px);font-weight:900;line-height:1.2;color:#ff66ad;text-shadow:0 0 16px #ff2b91,0 0 40px #ff2b9166}.again{margin-top:10px;background:transparent;border:1px solid #ff86bb;border-radius:13px;color:#ffd0e6;padding:11px 23px;font-size:14px;cursor:pointer}.foot{margin-top:27px;font-size:23px;letter-spacing:8px;color:#ff9fca}.heart{position:fixed;top:-50px;pointer-events:none;z-index:9;animation:fall linear forwards;text-shadow:0 0 12px #ff70ae}@keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(550deg);opacity:0}}@keyframes pop{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}#admin{display:none;margin-top:20px;padding:12px;background:#170b18;border:1px solid #a65c85;border-radius:12px;font-size:12px;color:#ffb6d8}#admin.show{display:block}#admin button{padding:8px 15px;border:1px solid #ff8dc1;background:#4b1740;color:white;border-radius:8px;margin-top:8px}
+:root{color-scheme:dark;--hot:#ff3c99;--pink:#ff91c6}*{box-sizing:border-box}
+body{margin:0;min-height:100svh;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;color:#fff;background:radial-gradient(circle at 50% 0%,#8d165d 0%,#370c2d 46%,#140713 100%);overflow-x:hidden}
+.wrap{max-width:500px;margin:auto;padding:40px 20px 70px;text-align:center}h1{position:relative;top:25px;font-size:clamp(28px,7vw,39px);margin:15px 0 40px;color:#ffd4e9;text-shadow:0 0 20px #fa2687}.panel{margin-top:40px;background:linear-gradient(145deg,#5d1648db,#290d29ee);border:1px solid #f765aa88;box-shadow:0 14px 55px #10010f99,inset 0 0 22px #ff4ca318;border-radius:28px;padding:24px 20px}.modes{display:flex;gap:8px;margin-bottom:25px}.mode{flex:1;border:1px solid #ff82ba;background:#421134;color:#ffd5e8;border-radius:14px;padding:13px 5px;font-size:13px;font-weight:700;cursor:pointer}.mode.active{background:linear-gradient(135deg,#ff4fa4,#e31770);border-color:#ffb2d5;box-shadow:0 0 18px #ff4a9b88}.field{text-align:left;margin:18px 0}.field label{display:block;color:#ffd2e7;font-weight:700;font-size:14px;margin-bottom:8px}.field small{font-size:12px;color:#ffa6cc;font-weight:400}.field input{width:100%;font-size:17px;padding:15px;border-radius:13px;border:1px solid #ff83b8;background:#1e0b20;color:white;outline:none}.field input:focus{border-color:#fff;box-shadow:0 0 0 3px #fa46985c}button.go{width:100%;margin-top:16px;padding:17px 10px;border:0;border-radius:18px;color:white;font-size:18px;font-weight:800;background:linear-gradient(100deg,#ff60ae,#f31d83,#e0106d);box-shadow:0 8px 28px #fb167b77;cursor:pointer}.go:active{transform:scale(.98)}.en{display:block;font-size:12px;font-weight:500;margin-top:5px}.result{display:none;margin-top:25px;padding:20px 10px;border:1px solid #ff8fc2;border-radius:22px;background:#240c23}.result.show{display:block;animation:pop .4s ease}.result .label{color:#ffbbd9;font-size:15px}.percent{font-size:clamp(75px,20vw,112px);font-weight:900;line-height:1.2;color:#ff66ad;text-shadow:0 0 16px #ff2b91,0 0 40px #ff2b9166}.again{margin-top:10px;background:transparent;border:1px solid #ff86bb;border-radius:13px;color:#ffd0e6;padding:11px 23px;font-size:14px;cursor:pointer}.future{margin:22px 0 12px;padding:19px 14px;background:#59153e;border:1px solid #f779b2;border-radius:20px}.future .head{color:#ffb6d9;font-size:20px;font-weight:800}.future .forecast{line-height:1.7;margin:17px auto;font-size:16px}.future .forecast-en{line-height:1.55;font-size:13px;color:#f8bad7;margin-top:10px}.smallbtn{width:100%;padding:14px 10px;border:0;border-radius:14px;background:linear-gradient(90deg,#ff4ca0,#e90072);color:white;font-weight:800;cursor:pointer}.share{margin-top:20px}.sharehead{color:#ffe0ef;font-weight:bold;margin-bottom:12px}.sharegrid{display:flex;gap:10px}.sharegrid button{flex:1;background:#66143f;color:white;border:1px solid #f779b2;border-radius:14px;padding:14px 5px;cursor:pointer}.share .smallbtn{margin-top:10px}.foot{margin-top:27px;font-size:23px;letter-spacing:8px;color:#ff9fca}.heart{position:fixed;top:-50px;pointer-events:none;z-index:9;animation:fall linear forwards;text-shadow:0 0 12px #ff70ae}@keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(550deg);opacity:0}}@keyframes pop{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}#admin{display:none;margin-top:20px;padding:12px;background:#170b18;border:1px solid #a65c85;border-radius:12px;font-size:12px;color:#ffb6d8}#admin.show{display:block}#admin button{padding:8px 15px;border:1px solid #ff8dc1;background:#4b1740;color:white;border-radius:8px;margin-top:8px}.legal{font-size:11px;color:#ecb4ce;margin:15px auto 0}
 </style></head>
-<body><main class="wrap"><h1 id="title">Crazy Love Test 💋</h1><section class="panel"><div class="modes"><button type="button" class="mode active" data-mode="love">💕 恋愛相性<span class="en">Love Compatibility</span></button><button type="button" class="mode" data-mode="sex">💋 SEX相性<span class="en">Sexual Compatibility</span></button></div><form id="form"><div class="field"><label for="name1">あなたの名前 <small>/ Your Name</small></label><input id="name1" maxlength="40" autocomplete="off" placeholder="名前を入力 / Enter your name" required oninvalid="this.setCustomValidity('No name, no love drama! 💋')" oninput="this.setCustomValidity('')"></div><div class="field"><label for="name2">相手の名前 <small>/ Partner's Name</small></label><input id="name2" maxlength="40" autocomplete="off" placeholder="名前を入力 / Enter their name" required oninvalid="this.setCustomValidity('No name, no love drama! 💋')" oninput="this.setCustomValidity('')"></div><button class="go" type="submit">💗 禁断の相性をチェック 💗<span class="en">Check Your Secret Chemistry</span></button></form><div id="result" class="result" aria-live="polite"><div id="resultLabel" class="label">💕 恋愛相性 / Love Compatibility</div><div id="percent" class="percent">98%</div><button class="again" id="again" type="button">もう一度診断 / Try Again ↻</button>
+<body>
+<main class="wrap">
+<h1 id="title">Crazy Love Test 💋</h1>
+<section class="panel">
+  <div class="modes"><button type="button" class="mode active" data-mode="love">💕 恋愛相性<span class="en">Love Compatibility</span></button><button type="button" class="mode" data-mode="sex">💋 SEX相性<span class="en">Sexual Compatibility</span></button></div>
+  <form id="form">
+    <div class="field"><label for="name1">あなたの名前 <small>/ Your Name</small></label><input id="name1" maxlength="40" autocomplete="off" placeholder="名前を入力 / Enter your name" required oninvalid="this.setCustomValidity('No name, no love drama! 💋')" oninput="this.setCustomValidity('')"></div>
+    <div class="field"><label for="name2">相手の名前 <small>/ Partner's Name</small></label><input id="name2" maxlength="40" autocomplete="off" placeholder="名前を入力 / Enter their name" required oninvalid="this.setCustomValidity('No name, no love drama! 💋')" oninput="this.setCustomValidity('')"></div>
+    <button class="go" type="submit">💗 禁断の相性をチェック 💗<span class="en">Check Your Secret Chemistry</span></button>
+  </form>
+  <div id="result" class="result" aria-live="polite">
+    <div id="resultLabel" class="label">💕 恋愛相性 / Love Compatibility</div>
+    <div id="percent" class="percent">98%</div>
+    <button class="again" id="again" type="button">もう一度診断 / Try Again ↻</button>
+    <div class="future" id="futureBox">
+      <div class="head" id="futureHeading">🔮 2人の未来予言</div>
+      <span class="en" id="futureSubheading">Your Love Future</span>
+      <div class="forecast" id="futureText"></div>
+      <div class="forecast-en" id="futureEnglish"></div>
+      <button class="smallbtn" id="futureAgain" type="button">✨ もう一度未来を占う<span class="en">Reveal Another Future</span></button>
+    </div>
+    <div class="share" id="shareButtons">
+      <div class="sharehead">💕 診断結果をシェア 💕<small class="en">Share Your Result</small></div>
+      <div class="sharegrid"><button type="button" data-share="x">𝕏 Xで共有</button><button type="button" data-share="line">LINEで共有</button></div>
+      <button class="smallbtn" type="button" data-share="other">♡ その他のアプリで共有</button>
+    </div>
+    <div class="legal">※エンターテインメント用の診断です / For entertainment only</div>
+  </div>
+</section>
+<div class="foot"></div>
+<div id="admin">🔒 管理用設定 / Private Settings<br><span id="status"></span><br><button id="toggle" type="button">切り替え / Toggle</button><br><small>この設定はこの端末だけに保存されます。コードを調べると仕組みは分かります。</small></div>
 
-<div id="shareButtons" style="margin-top:20px;text-align:center">
-  <div style="color:#ffe0ef;font-weight:bold;margin-bottom:12px">
-    💕 診断結果をシェア 💕
-    <small style="display:block">Share Your Result</small>
-  </div>
-  <div style="display:flex;gap:10px">
-    <button type="button" onclick="shareLove('x')" style="flex:1;background:#66143f;color:white;border:1px solid #f779b2;border-radius:14px;padding:14px 5px">𝕏 Xで共有</button>
-    <button type="button" onclick="shareLove('line')" style="flex:1;background:#66143f;color:white;border:1px solid #f779b2;border-radius:14px;padding:14px 5px">LINEで共有</button>
-  </div>
-  <button type="button" onclick="shareLove('other')" style="width:100%;margin-top:10px;background:linear-gradient(90deg,#ff4ca0,#e90072);color:white;border:0;border-radius:14px;padding:16px">
-    ♡ その他のアプリで共有
-  </button>
+<!-- 現在のアクセスカウンターと既存アフィリエイト広告を維持 -->
+<div style="text-align:center; margin:25px 0;">
+  <img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fcrazy-love-test.github.io%2F&amp;label=VISITORS&amp;icon=github&amp;color=%23000&amp;message=&amp;style=flat&amp;tz=UTC" alt="Visitors counter">
+  <a href="https://550909.com/?f2927217" target="_blank" rel="nofollow sponsored noopener noreferrer">
+    <img src="IMG_1714.jpeg" alt="PR マッチングサービス" style="width:100%;max-width:640px;height:auto;">
+  </a>
 </div>
-
-</div></section><div class="foot"></div><div id="admin">🔒 管理用設定 / Private Settings<br><span id="status"></span><br><button id="toggle" type="button">切り替え / Toggle</button><br><small>この設定はこの端末だけに保存されます。コードを調べると仕組みは分かります。</small></div></main><script>
-
-(()=>{'use strict';
-let mode='love';
-const $=id=>document.getElementById(id);
-let special=localStorage.getItem('crazy-love-special')!=='off';
-
-
-document.querySelectorAll('.mode').forEach(b=>b.addEventListener('click',()=>{
-  mode=b.dataset.mode;
-  document.querySelectorAll('.mode').forEach(x=>x.classList.toggle('active',x===b));
-  $('result').classList.remove('show');
-}));
-
-function hearts(){
-  const icons=['💗','💕','💖','💘','❤️‍🔥','💋'];
-  for(let i=0;i<125;i++){
-    const h=document.createElement('span');
-    h.className='heart';
-    h.textContent=icons[Math.floor(Math.random()*icons.length)];
-    h.style.left=Math.random()*100+'vw';
-    h.style.fontSize=(14+Math.random()*28)+'px';
-    h.style.animationDuration=(2.5+Math.random()*3.5)+'s';
-    h.style.animationDelay=(Math.random()*2)+'s';
-    h.style.setProperty('--drift',(Math.random()*200-100)+'px');
-    document.body.append(h);
-    setTimeout(()=>h.remove(),6500);
-  }
-}
-
-function diagnose(){
-  const a=$('name1').value.trim(),b=$('name2').value.trim();
-  if(!a||!b){$('form').reportValidity();return}
-  const isShin=a==='しんちゃん'||b==='しんちゃん';
-  const pct=special&&isShin?100:Math.floor(Math.random()*101);
-
-  $('resultLabel').textContent=mode==='love'
-    ?'💕 恋愛相性 / Love Compatibility'
-    :'💋 SEX相性 / Sexual Compatibility';
-  $('percent').textContent=pct+'%';
-  $('result').classList.remove('show');
-  void $('result').offsetWidth;
-  $('result').classList.add('show');
-  hearts();
-
-  
-}
-
-$('form').addEventListener('submit',e=>{
-  e.preventDefault();
-  diagnose();
-});
-$('again').addEventListener('click',diagnose);
-
-let taps=0,last=0;
-$('title').addEventListener('click',()=>{
-  if(Date.now()-last>2500)taps=0;
-  last=Date.now();
-  if(++taps>=7){
-    $('admin').classList.toggle('show');
-    taps=0;
-    update();
-  }
-});
-
-function update(){
-  $('status').textContent='しんちゃん100%: '+(special?'ON':'OFF');
-}
-
-$('toggle').addEventListener('click',()=>{
-  special=!special;
-  localStorage.setItem('crazy-love-special',special?'on':'off');
-  update();
-});
-})();
-
-</script>
-
+</main>
 <script>
-async function shareLove(type) {
-  const label = document.getElementById('resultLabel').textContent.trim();
-  const percent = document.getElementById('percent').textContent.trim();
-  const url = 'https://crazy-love-test.github.io/';
-  const message = `💕 Crazy Love Test 💋\n${label}: ${percent}\n${url}`;
-
-  if (type === 'x') {
-    window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(message), '_blank');
-  } else if (type === 'line') {
-    window.open('https://line.me/R/msg/text/?' + encodeURIComponent(message), '_blank');
-  } else if (navigator.share) {
-    try {
-      await navigator.share({text: message});
-    } catch (e) {
-      if (e.name !== 'AbortError') alert('共有できませんでした');
-    }
-  } else {
-    try {
-      await navigator.clipboard.writeText(message);
-      alert('診断結果をコピーしました！');
-    } catch (e) {
-      prompt('診断結果をコピーしてください', message);
+// 2ジャンル × 5段階 × 各20種類 = 200種類のオリジナル予言
+const FUTURES = [{"mode":"love","tier":4,"ja":"運命の告白が近づいている。未来にワクワクして。","en":"A fateful confession may be near. Enjoy the possibilities ahead."},{"mode":"love","tier":4,"ja":"運命の告白が近づいている。その瞬間を大切にして。","en":"A fateful confession may be near. Treasure that special moment."},{"mode":"love","tier":4,"ja":"2人だけの約束が未来を変える。未来にワクワクして。","en":"A promise between you could change the future. Enjoy the possibilities ahead."},{"mode":"love","tier":4,"ja":"2人だけの約束が未来を変える。その瞬間を大切にして。","en":"A promise between you could change the future. Treasure that special moment."},{"mode":"love","tier":4,"ja":"記念日にうれしいサプライズが待っている。未来にワクワクして。","en":"A sweet anniversary surprise could await. Enjoy the possibilities ahead."},{"mode":"love","tier":4,"ja":"記念日にうれしいサプライズが待っている。その瞬間を大切にして。","en":"A sweet anniversary surprise could await. Treasure that special moment."},{"mode":"love","tier":4,"ja":"何年経っても笑える思い出が増える。未来にワクワクして。","en":"You may create a memory you will laugh about for years. Enjoy the possibilities ahead."},{"mode":"love","tier":4,"ja":"何年経っても笑える思い出が増える。その瞬間を大切にして。","en":"You may create a memory you will laugh about for years. Treasure that special moment."},{"mode":"love","tier":4,"ja":"プロポーズを想像するような瞬間が訪れる。未来にワクワクして。","en":"A moment may make you imagine a proposal. Enjoy the possibilities ahead."},{"mode":"love","tier":4,"ja":"プロポーズを想像するような瞬間が訪れる。その瞬間を大切にして。","en":"A moment may make you imagine a proposal. Treasure that special moment."},{"mode":"love","tier":4,"ja":"ふとした会話で深い絆を感じる。未来にワクワクして。","en":"An ordinary conversation may reveal a deep bond. Enjoy the possibilities ahead."},{"mode":"love","tier":4,"ja":"ふとした会話で深い絆を感じる。その瞬間を大切にして。","en":"An ordinary conversation may reveal a deep bond. Treasure that special moment."},{"mode":"love","tier":4,"ja":"星空の下で忘れられないデートが始まる。未来にワクワクして。","en":"An unforgettable date may begin under the stars. Enjoy the possibilities ahead."},{"mode":"love","tier":4,"ja":"星空の下で忘れられないデートが始まる。その瞬間を大切にして。","en":"An unforgettable date may begin under the stars. Treasure that special moment."},{"mode":"love","tier":4,"ja":"お互いの夢を応援する関係に近づく。未来にワクワクして。","en":"You may grow into partners who support each dream. Enjoy the possibilities ahead."},{"mode":"love","tier":4,"ja":"お互いの夢を応援する関係に近づく。その瞬間を大切にして。","en":"You may grow into partners who support each dream. Treasure that special moment."},{"mode":"love","tier":4,"ja":"遠回りしても心が通じ合う予感。未来にワクワクして。","en":"Even a detour may bring your hearts together. Enjoy the possibilities ahead."},{"mode":"love","tier":4,"ja":"遠回りしても心が通じ合う予感。その瞬間を大切にして。","en":"Even a detour may bring your hearts together. Treasure that special moment."},{"mode":"love","tier":4,"ja":"周りがうらやむほど息の合う2人になる。未来にワクワクして。","en":"You may become a remarkably in-sync couple. Enjoy the possibilities ahead."},{"mode":"love","tier":4,"ja":"周りがうらやむほど息の合う2人になる。その瞬間を大切にして。","en":"You may become a remarkably in-sync couple. Treasure that special moment."},{"mode":"love","tier":3,"ja":"突然のメッセージが恋のスイッチを押す。いつもより少し勇気を出してみて。","en":"A surprise message could spark romance. A little courage may go a long way."},{"mode":"love","tier":3,"ja":"突然のメッセージが恋のスイッチを押す。自然な笑顔が幸運の鍵。","en":"A surprise message could spark romance. Your natural smile may be the key."},{"mode":"love","tier":3,"ja":"次のデートで急接近する予感。いつもより少し勇気を出してみて。","en":"Your next date may bring you much closer. A little courage may go a long way."},{"mode":"love","tier":3,"ja":"次のデートで急接近する予感。自然な笑顔が幸運の鍵。","en":"Your next date may bring you much closer. Your natural smile may be the key."},{"mode":"love","tier":3,"ja":"軽い冗談が思いがけない告白につながる。いつもより少し勇気を出してみて。","en":"A small joke may lead to a surprising confession. A little courage may go a long way."},{"mode":"love","tier":3,"ja":"軽い冗談が思いがけない告白につながる。自然な笑顔が幸運の鍵。","en":"A small joke may lead to a surprising confession. Your natural smile may be the key."},{"mode":"love","tier":3,"ja":"共通の趣味が2人の距離を縮める。いつもより少し勇気を出してみて。","en":"A shared hobby could bring you closer. A little courage may go a long way."},{"mode":"love","tier":3,"ja":"共通の趣味が2人の距離を縮める。自然な笑顔が幸運の鍵。","en":"A shared hobby could bring you closer. Your natural smile may be the key."},{"mode":"love","tier":3,"ja":"勇気を出した誘いが特別な一日に変わる。いつもより少し勇気を出してみて。","en":"A brave invitation may become a special day. A little courage may go a long way."},{"mode":"love","tier":3,"ja":"勇気を出した誘いが特別な一日に変わる。自然な笑顔が幸運の鍵。","en":"A brave invitation may become a special day. Your natural smile may be the key."},{"mode":"love","tier":3,"ja":"何気ないプレゼントに心が動く。いつもより少し勇気を出してみて。","en":"An ordinary gift may touch your heart. A little courage may go a long way."},{"mode":"love","tier":3,"ja":"何気ないプレゼントに心が動く。自然な笑顔が幸運の鍵。","en":"An ordinary gift may touch your heart. Your natural smile may be the key."},{"mode":"love","tier":3,"ja":"視線が合う回数が増えていく。いつもより少し勇気を出してみて。","en":"You may notice more lingering glances. A little courage may go a long way."},{"mode":"love","tier":3,"ja":"視線が合う回数が増えていく。自然な笑顔が幸運の鍵。","en":"You may notice more lingering glances. Your natural smile may be the key."},{"mode":"love","tier":3,"ja":"友達に恋の気配を見抜かれる。いつもより少し勇気を出してみて。","en":"Friends may notice the romantic tension. A little courage may go a long way."},{"mode":"love","tier":3,"ja":"友達に恋の気配を見抜かれる。自然な笑顔が幸運の鍵。","en":"Friends may notice the romantic tension. Your natural smile may be the key."},{"mode":"love","tier":3,"ja":"帰り道がいつもより名残惜しくなる。いつもより少し勇気を出してみて。","en":"Saying goodbye may feel harder than usual. A little courage may go a long way."},{"mode":"love","tier":3,"ja":"帰り道がいつもより名残惜しくなる。自然な笑顔が幸運の鍵。","en":"Saying goodbye may feel harder than usual. Your natural smile may be the key."},{"mode":"love","tier":3,"ja":"小さな約束が大きな思い出に変わる。いつもより少し勇気を出してみて。","en":"A tiny promise may become a big memory. A little courage may go a long way."},{"mode":"love","tier":3,"ja":"小さな約束が大きな思い出に変わる。自然な笑顔が幸運の鍵。","en":"A tiny promise may become a big memory. Your natural smile may be the key."},{"mode":"love","tier":2,"ja":"何気ない挨拶が恋のきっかけになる。焦らず自分らしく進んで。","en":"A simple hello could begin something new. Take your time and be yourself."},{"mode":"love","tier":2,"ja":"何気ない挨拶が恋のきっかけになる。気軽な会話がきっかけになるかも。","en":"A simple hello could begin something new. A casual chat may open the door."},{"mode":"love","tier":2,"ja":"ゆっくり話す時間が増える予感。焦らず自分らしく進んで。","en":"You may find more time to talk. Take your time and be yourself."},{"mode":"love","tier":2,"ja":"ゆっくり話す時間が増える予感。気軽な会話がきっかけになるかも。","en":"You may find more time to talk. A casual chat may open the door."},{"mode":"love","tier":2,"ja":"意外な共通点が見つかる。焦らず自分らしく進んで。","en":"You might discover a surprising thing in common. Take your time and be yourself."},{"mode":"love","tier":2,"ja":"意外な共通点が見つかる。気軽な会話がきっかけになるかも。","en":"You might discover a surprising thing in common. A casual chat may open the door."},{"mode":"love","tier":2,"ja":"一緒に食べたものが思い出の味になる。焦らず自分らしく進んで。","en":"A shared meal may become a favorite memory. Take your time and be yourself."},{"mode":"love","tier":2,"ja":"一緒に食べたものが思い出の味になる。気軽な会話がきっかけになるかも。","en":"A shared meal may become a favorite memory. A casual chat may open the door."},{"mode":"love","tier":2,"ja":"偶然の再会で少しドキッとする。焦らず自分らしく進んで。","en":"A chance meeting may make your heart race. Take your time and be yourself."},{"mode":"love","tier":2,"ja":"偶然の再会で少しドキッとする。気軽な会話がきっかけになるかも。","en":"A chance meeting may make your heart race. A casual chat may open the door."},{"mode":"love","tier":2,"ja":"返信を待つ時間が楽しみになる。焦らず自分らしく進んで。","en":"Waiting for a reply might become exciting. Take your time and be yourself."},{"mode":"love","tier":2,"ja":"返信を待つ時間が楽しみになる。気軽な会話がきっかけになるかも。","en":"Waiting for a reply might become exciting. A casual chat may open the door."},{"mode":"love","tier":2,"ja":"何でもない日に小さなときめきが生まれる。焦らず自分らしく進んで。","en":"A normal day may hold a tiny spark. Take your time and be yourself."},{"mode":"love","tier":2,"ja":"何でもない日に小さなときめきが生まれる。気軽な会話がきっかけになるかも。","en":"A normal day may hold a tiny spark. A casual chat may open the door."},{"mode":"love","tier":2,"ja":"笑いのツボが似ていると気づく。焦らず自分らしく進んで。","en":"You may find you share the same sense of humor. Take your time and be yourself."},{"mode":"love","tier":2,"ja":"笑いのツボが似ていると気づく。気軽な会話がきっかけになるかも。","en":"You may find you share the same sense of humor. A casual chat may open the door."},{"mode":"love","tier":2,"ja":"少しずつ本音を話せるようになる。焦らず自分らしく進んで。","en":"Honest conversations may become easier. Take your time and be yourself."},{"mode":"love","tier":2,"ja":"少しずつ本音を話せるようになる。気軽な会話がきっかけになるかも。","en":"Honest conversations may become easier. A casual chat may open the door."},{"mode":"love","tier":2,"ja":"焦らない恋が意外と心地よい。焦らず自分らしく進んで。","en":"A slow-blooming romance may feel just right. Take your time and be yourself."},{"mode":"love","tier":2,"ja":"焦らない恋が意外と心地よい。気軽な会話がきっかけになるかも。","en":"A slow-blooming romance may feel just right. A casual chat may open the door."},{"mode":"love","tier":1,"ja":"すれ違った一言が思わぬ笑い話になる。笑い飛ばせたらそれも思い出。","en":"A misunderstanding may become a funny story. Laughing about it may make a good memory."},{"mode":"love","tier":1,"ja":"すれ違った一言が思わぬ笑い話になる。気持ちを言葉にすると変わるかも。","en":"A misunderstanding may become a funny story. Honest communication could help."},{"mode":"love","tier":1,"ja":"連絡のタイミングが奇跡的にずれる。笑い飛ばせたらそれも思い出。","en":"Your messages may hilariously cross paths. Laughing about it may make a good memory."},{"mode":"love","tier":1,"ja":"連絡のタイミングが奇跡的にずれる。気持ちを言葉にすると変わるかも。","en":"Your messages may hilariously cross paths. Honest communication could help."},{"mode":"love","tier":1,"ja":"勇気ある一言が空気を変える。笑い飛ばせたらそれも思い出。","en":"One honest sentence may shift the mood. Laughing about it may make a good memory."},{"mode":"love","tier":1,"ja":"勇気ある一言が空気を変える。気持ちを言葉にすると変わるかも。","en":"One honest sentence may shift the mood. Honest communication could help."},{"mode":"love","tier":1,"ja":"相手の意外な趣味にびっくりする。笑い飛ばせたらそれも思い出。","en":"A surprising hobby may catch you off guard. Laughing about it may make a good memory."},{"mode":"love","tier":1,"ja":"相手の意外な趣味にびっくりする。気持ちを言葉にすると変わるかも。","en":"A surprising hobby may catch you off guard. Honest communication could help."},{"mode":"love","tier":1,"ja":"小さな勘違いから会話が始まる。笑い飛ばせたらそれも思い出。","en":"A tiny mix-up could start a conversation. Laughing about it may make a good memory."},{"mode":"love","tier":1,"ja":"小さな勘違いから会話が始まる。気持ちを言葉にすると変わるかも。","en":"A tiny mix-up could start a conversation. Honest communication could help."},{"mode":"love","tier":1,"ja":"意見の違いから新しい発見が生まれる。笑い飛ばせたらそれも思い出。","en":"Different opinions may reveal something new. Laughing about it may make a good memory."},{"mode":"love","tier":1,"ja":"意見の違いから新しい発見が生まれる。気持ちを言葉にすると変わるかも。","en":"Different opinions may reveal something new. Honest communication could help."},{"mode":"love","tier":1,"ja":"友達からの助言がまさかの逆効果。笑い飛ばせたらそれも思い出。","en":"A friend’s advice might backfire amusingly. Laughing about it may make a good memory."},{"mode":"love","tier":1,"ja":"友達からの助言がまさかの逆効果。気持ちを言葉にすると変わるかも。","en":"A friend’s advice might backfire amusingly. Honest communication could help."},{"mode":"love","tier":1,"ja":"待ち合わせで予想外のハプニングが起きる。笑い飛ばせたらそれも思い出。","en":"A meet-up may come with a comic mishap. Laughing about it may make a good memory."},{"mode":"love","tier":1,"ja":"待ち合わせで予想外のハプニングが起きる。気持ちを言葉にすると変わるかも。","en":"A meet-up may come with a comic mishap. Honest communication could help."},{"mode":"love","tier":1,"ja":"ぎこちない沈黙を笑いに変えられる。笑い飛ばせたらそれも思い出。","en":"You may turn an awkward silence into laughter. Laughing about it may make a good memory."},{"mode":"love","tier":1,"ja":"ぎこちない沈黙を笑いに変えられる。気持ちを言葉にすると変わるかも。","en":"You may turn an awkward silence into laughter. Honest communication could help."},{"mode":"love","tier":1,"ja":"少し距離を置くことで本音が見えてくる。笑い飛ばせたらそれも思い出。","en":"A little space may help reveal true feelings. Laughing about it may make a good memory."},{"mode":"love","tier":1,"ja":"少し距離を置くことで本音が見えてくる。気持ちを言葉にすると変わるかも。","en":"A little space may help reveal true feelings. Honest communication could help."},{"mode":"love","tier":0,"ja":"恋人より最高のゲーム仲間になるかも。でもその展開も楽しそう！","en":"You might make better gaming buddies than lovers. But that could be fun too!"},{"mode":"love","tier":0,"ja":"恋人より最高のゲーム仲間になるかも。予想外の友情が芽生えるかも。","en":"You might make better gaming buddies than lovers. An unexpected friendship may bloom."},{"mode":"love","tier":0,"ja":"デートのはずが食べ歩き大会に変わる。でもその展開も楽しそう！","en":"A date might turn into a food tour. But that could be fun too!"},{"mode":"love","tier":0,"ja":"デートのはずが食べ歩き大会に変わる。予想外の友情が芽生えるかも。","en":"A date might turn into a food tour. An unexpected friendship may bloom."},{"mode":"love","tier":0,"ja":"ロマンチックな夜が漫才大会になる。でもその展開も楽しそう！","en":"Romantic night may become a comedy show. But that could be fun too!"},{"mode":"love","tier":0,"ja":"ロマンチックな夜が漫才大会になる。予想外の友情が芽生えるかも。","en":"Romantic night may become a comedy show. An unexpected friendship may bloom."},{"mode":"love","tier":0,"ja":"恋のキューピッド役になる可能性も。でもその展開も楽しそう！","en":"You may end up playing matchmaker instead. But that could be fun too!"},{"mode":"love","tier":0,"ja":"恋のキューピッド役になる可能性も。予想外の友情が芽生えるかも。","en":"You may end up playing matchmaker instead. An unexpected friendship may bloom."},{"mode":"love","tier":0,"ja":"2人の趣味が真逆すぎて話題が尽きない。でもその展開も楽しそう！","en":"Your opposite hobbies may fuel endless banter. But that could be fun too!"},{"mode":"love","tier":0,"ja":"2人の趣味が真逆すぎて話題が尽きない。予想外の友情が芽生えるかも。","en":"Your opposite hobbies may fuel endless banter. An unexpected friendship may bloom."},{"mode":"love","tier":0,"ja":"恋人より頼れる相談相手になるかも。でもその展開も楽しそう！","en":"You may become trusted advisers instead. But that could be fun too!"},{"mode":"love","tier":0,"ja":"恋人より頼れる相談相手になるかも。予想外の友情が芽生えるかも。","en":"You may become trusted advisers instead. An unexpected friendship may bloom."},{"mode":"love","tier":0,"ja":"待ち合わせ場所で永遠にすれ違うかも。でもその展開も楽しそう！","en":"You might keep missing each other at the meeting spot. But that could be fun too!"},{"mode":"love","tier":0,"ja":"待ち合わせ場所で永遠にすれ違うかも。予想外の友情が芽生えるかも。","en":"You might keep missing each other at the meeting spot. An unexpected friendship may bloom."},{"mode":"love","tier":0,"ja":"誤送信からまさかの友情が始まる。でもその展開も楽しそう！","en":"A wrong text may spark an unlikely friendship. But that could be fun too!"},{"mode":"love","tier":0,"ja":"誤送信からまさかの友情が始まる。予想外の友情が芽生えるかも。","en":"A wrong text may spark an unlikely friendship. An unexpected friendship may bloom."},{"mode":"love","tier":0,"ja":"ケンカより先にお腹が空いて仲直り。でもその展開も楽しそう！","en":"Hunger may end an argument before it begins. But that could be fun too!"},{"mode":"love","tier":0,"ja":"ケンカより先にお腹が空いて仲直り。予想外の友情が芽生えるかも。","en":"Hunger may end an argument before it begins. An unexpected friendship may bloom."},{"mode":"love","tier":0,"ja":"意外な共通点がひとつだけ見つかる。でもその展開も楽しそう！","en":"You may find exactly one hilarious thing in common. But that could be fun too!"},{"mode":"love","tier":0,"ja":"意外な共通点がひとつだけ見つかる。予想外の友情が芽生えるかも。","en":"You may find exactly one hilarious thing in common. An unexpected friendship may bloom."},{"mode":"sex","tier":4,"ja":"ひと目で伝わる情熱にびっくりするかも。未来にワクワクして。","en":"An intense spark may catch you by surprise. Enjoy the possibilities ahead."},{"mode":"sex","tier":4,"ja":"ひと目で伝わる情熱にびっくりするかも。その瞬間を大切にして。","en":"An intense spark may catch you by surprise. Treasure that special moment."},{"mode":"sex","tier":4,"ja":"2人きりの時間があっという間に過ぎる。未来にワクワクして。","en":"Time alone together may fly by. Enjoy the possibilities ahead."},{"mode":"sex","tier":4,"ja":"2人きりの時間があっという間に過ぎる。その瞬間を大切にして。","en":"Time alone together may fly by. Treasure that special moment."},{"mode":"sex","tier":4,"ja":"甘い視線だけでドキドキが加速する。未来にワクワクして。","en":"A tender glance may make hearts race. Enjoy the possibilities ahead."},{"mode":"sex","tier":4,"ja":"甘い視線だけでドキドキが加速する。その瞬間を大切にして。","en":"A tender glance may make hearts race. Treasure that special moment."},{"mode":"sex","tier":4,"ja":"いつもと違う雰囲気に引き込まれる。未来にワクワクして。","en":"An unexpected mood may draw you closer. Enjoy the possibilities ahead."},{"mode":"sex","tier":4,"ja":"いつもと違う雰囲気に引き込まれる。その瞬間を大切にして。","en":"An unexpected mood may draw you closer. Treasure that special moment."},{"mode":"sex","tier":4,"ja":"思いやりが情熱をさらに深める。未来にワクワクして。","en":"Mutual care may deepen your passion. Enjoy the possibilities ahead."},{"mode":"sex","tier":4,"ja":"思いやりが情熱をさらに深める。その瞬間を大切にして。","en":"Mutual care may deepen your passion. Treasure that special moment."},{"mode":"sex","tier":4,"ja":"ロマンチックな夜が忘れられない思い出に。未来にワクワクして。","en":"A romantic night may become unforgettable. Enjoy the possibilities ahead."},{"mode":"sex","tier":4,"ja":"ロマンチックな夜が忘れられない思い出に。その瞬間を大切にして。","en":"A romantic night may become unforgettable. Treasure that special moment."},{"mode":"sex","tier":4,"ja":"自然なスキンシップに安心感が生まれる。未来にワクワクして。","en":"Gentle affection may feel wonderfully natural. Enjoy the possibilities ahead."},{"mode":"sex","tier":4,"ja":"自然なスキンシップに安心感が生まれる。その瞬間を大切にして。","en":"Gentle affection may feel wonderfully natural. Treasure that special moment."},{"mode":"sex","tier":4,"ja":"素直な気持ちを伝えて距離が縮まる。未来にワクワクして。","en":"Openly sharing feelings may bring you closer. Enjoy the possibilities ahead."},{"mode":"sex","tier":4,"ja":"素直な気持ちを伝えて距離が縮まる。その瞬間を大切にして。","en":"Openly sharing feelings may bring you closer. Treasure that special moment."},{"mode":"sex","tier":4,"ja":"お互いのペースが驚くほど合う。未来にワクワクして。","en":"Your rhythms may feel surprisingly in sync. Enjoy the possibilities ahead."},{"mode":"sex","tier":4,"ja":"お互いのペースが驚くほど合う。その瞬間を大切にして。","en":"Your rhythms may feel surprisingly in sync. Treasure that special moment."},{"mode":"sex","tier":4,"ja":"照れ笑いさえ魅力に変わる。未来にワクワクして。","en":"Even a shy smile may feel irresistible. Enjoy the possibilities ahead."},{"mode":"sex","tier":4,"ja":"照れ笑いさえ魅力に変わる。その瞬間を大切にして。","en":"Even a shy smile may feel irresistible. Treasure that special moment."},{"mode":"sex","tier":3,"ja":"いつもの会話が急に甘い雰囲気へ。いつもより少し勇気を出してみて。","en":"An ordinary chat may turn delightfully flirty. A little courage may go a long way."},{"mode":"sex","tier":3,"ja":"いつもの会話が急に甘い雰囲気へ。自然な笑顔が幸運の鍵。","en":"An ordinary chat may turn delightfully flirty. Your natural smile may be the key."},{"mode":"sex","tier":3,"ja":"近づいた瞬間に心が跳ねる。いつもより少し勇気を出してみて。","en":"Your heart may jump when you get close. A little courage may go a long way."},{"mode":"sex","tier":3,"ja":"近づいた瞬間に心が跳ねる。自然な笑顔が幸運の鍵。","en":"Your heart may jump when you get close. Your natural smile may be the key."},{"mode":"sex","tier":3,"ja":"軽い冗談で2人の距離が縮まる。いつもより少し勇気を出してみて。","en":"Playful banter may bring you closer. A little courage may go a long way."},{"mode":"sex","tier":3,"ja":"軽い冗談で2人の距離が縮まる。自然な笑顔が幸運の鍵。","en":"Playful banter may bring you closer. Your natural smile may be the key."},{"mode":"sex","tier":3,"ja":"夜のデートで予想外のときめきが。いつもより少し勇気を出してみて。","en":"An evening date may bring unexpected butterflies. A little courage may go a long way."},{"mode":"sex","tier":3,"ja":"夜のデートで予想外のときめきが。自然な笑顔が幸運の鍵。","en":"An evening date may bring unexpected butterflies. Your natural smile may be the key."},{"mode":"sex","tier":3,"ja":"照れながらの褒め言葉が効く。いつもより少し勇気を出してみて。","en":"A shy compliment may work wonders. A little courage may go a long way."},{"mode":"sex","tier":3,"ja":"照れながらの褒め言葉が効く。自然な笑顔が幸運の鍵。","en":"A shy compliment may work wonders. Your natural smile may be the key."},{"mode":"sex","tier":3,"ja":"手をつなぐだけで特別な気分に。いつもより少し勇気を出してみて。","en":"Holding hands may feel surprisingly special. A little courage may go a long way."},{"mode":"sex","tier":3,"ja":"手をつなぐだけで特別な気分に。自然な笑顔が幸運の鍵。","en":"Holding hands may feel surprisingly special. Your natural smile may be the key."},{"mode":"sex","tier":3,"ja":"お互いの笑顔に惹かれ合う。いつもより少し勇気を出してみて。","en":"You may find each other’s smiles magnetic. A little courage may go a long way."},{"mode":"sex","tier":3,"ja":"お互いの笑顔に惹かれ合う。自然な笑顔が幸運の鍵。","en":"You may find each other’s smiles magnetic. Your natural smile may be the key."},{"mode":"sex","tier":3,"ja":"少し大胆な誘いに驚かされる。いつもより少し勇気を出してみて。","en":"A bold invitation may take you by surprise. A little courage may go a long way."},{"mode":"sex","tier":3,"ja":"少し大胆な誘いに驚かされる。自然な笑顔が幸運の鍵。","en":"A bold invitation may take you by surprise. Your natural smile may be the key."},{"mode":"sex","tier":3,"ja":"ふとした沈黙に甘い緊張が生まれる。いつもより少し勇気を出してみて。","en":"A pause may fill with sweet tension. A little courage may go a long way."},{"mode":"sex","tier":3,"ja":"ふとした沈黙に甘い緊張が生まれる。自然な笑顔が幸運の鍵。","en":"A pause may fill with sweet tension. Your natural smile may be the key."},{"mode":"sex","tier":3,"ja":"タイミングの合ったキスに胸が高鳴る。いつもより少し勇気を出してみて。","en":"A well-timed kiss may set hearts racing. A little courage may go a long way."},{"mode":"sex","tier":3,"ja":"タイミングの合ったキスに胸が高鳴る。自然な笑顔が幸運の鍵。","en":"A well-timed kiss may set hearts racing. Your natural smile may be the key."},{"mode":"sex","tier":2,"ja":"ゆっくり話すことで安心感が生まれる。焦らず自分らしく進んで。","en":"Taking time to talk may build comfort. Take your time and be yourself."},{"mode":"sex","tier":2,"ja":"ゆっくり話すことで安心感が生まれる。気軽な会話がきっかけになるかも。","en":"Taking time to talk may build comfort. A casual chat may open the door."},{"mode":"sex","tier":2,"ja":"急がないデートが意外と盛り上がる。焦らず自分らしく進んで。","en":"An unhurried date may be unexpectedly exciting. Take your time and be yourself."},{"mode":"sex","tier":2,"ja":"急がないデートが意外と盛り上がる。気軽な会話がきっかけになるかも。","en":"An unhurried date may be unexpectedly exciting. A casual chat may open the door."},{"mode":"sex","tier":2,"ja":"好きな香りの話から会話が弾む。焦らず自分らしく進んで。","en":"Talking about favorite scents may spark a connection. Take your time and be yourself."},{"mode":"sex","tier":2,"ja":"好きな香りの話から会話が弾む。気軽な会話がきっかけになるかも。","en":"Talking about favorite scents may spark a connection. A casual chat may open the door."},{"mode":"sex","tier":2,"ja":"無理せず自然体でいるのが近道。焦らず自分らしく進んで。","en":"Being yourself may be the best way forward. Take your time and be yourself."},{"mode":"sex","tier":2,"ja":"無理せず自然体でいるのが近道。気軽な会話がきっかけになるかも。","en":"Being yourself may be the best way forward. A casual chat may open the door."},{"mode":"sex","tier":2,"ja":"お互いの好きな距離感を発見する。焦らず自分らしく進んで。","en":"You may discover each other’s comfort zones. Take your time and be yourself."},{"mode":"sex","tier":2,"ja":"お互いの好きな距離感を発見する。気軽な会話がきっかけになるかも。","en":"You may discover each other’s comfort zones. A casual chat may open the door."},{"mode":"sex","tier":2,"ja":"静かな映画デートが心地よく感じる。焦らず自分らしく進んで。","en":"A quiet movie date may feel perfect. Take your time and be yourself."},{"mode":"sex","tier":2,"ja":"静かな映画デートが心地よく感じる。気軽な会話がきっかけになるかも。","en":"A quiet movie date may feel perfect. A casual chat may open the door."},{"mode":"sex","tier":2,"ja":"思いやりのある一言で距離が縮まる。焦らず自分らしく進んで。","en":"A caring comment may make you closer. Take your time and be yourself."},{"mode":"sex","tier":2,"ja":"思いやりのある一言で距離が縮まる。気軽な会話がきっかけになるかも。","en":"A caring comment may make you closer. A casual chat may open the door."},{"mode":"sex","tier":2,"ja":"心地よいペースが少しずつ見つかる。焦らず自分らしく進んで。","en":"You may slowly discover a shared rhythm. Take your time and be yourself."},{"mode":"sex","tier":2,"ja":"心地よいペースが少しずつ見つかる。気軽な会話がきっかけになるかも。","en":"You may slowly discover a shared rhythm. A casual chat may open the door."},{"mode":"sex","tier":2,"ja":"照れた笑顔から優しい空気が生まれる。焦らず自分らしく進んで。","en":"A bashful smile may create a gentle mood. Take your time and be yourself."},{"mode":"sex","tier":2,"ja":"照れた笑顔から優しい空気が生まれる。気軽な会話がきっかけになるかも。","en":"A bashful smile may create a gentle mood. A casual chat may open the door."},{"mode":"sex","tier":2,"ja":"小さな約束が信頼を育てる。焦らず自分らしく進んで。","en":"A small promise may nurture trust. Take your time and be yourself."},{"mode":"sex","tier":2,"ja":"小さな約束が信頼を育てる。気軽な会話がきっかけになるかも。","en":"A small promise may nurture trust. A casual chat may open the door."},{"mode":"sex","tier":1,"ja":"手をつなぐタイミングで盛大に照れる。笑い飛ばせたらそれも思い出。","en":"You may both blush while trying to hold hands. Laughing about it may make a good memory."},{"mode":"sex","tier":1,"ja":"手をつなぐタイミングで盛大に照れる。気持ちを言葉にすると変わるかも。","en":"You may both blush while trying to hold hands. Honest communication could help."},{"mode":"sex","tier":1,"ja":"ムードより先にお笑いスイッチが入る。笑い飛ばせたらそれも思い出。","en":"Comedy mode may arrive before romance. Laughing about it may make a good memory."},{"mode":"sex","tier":1,"ja":"ムードより先にお笑いスイッチが入る。気持ちを言葉にすると変わるかも。","en":"Comedy mode may arrive before romance. Honest communication could help."},{"mode":"sex","tier":1,"ja":"思ったことを伝えたら空気が和らぐ。笑い飛ばせたらそれも思い出。","en":"Speaking openly may ease the awkwardness. Laughing about it may make a good memory."},{"mode":"sex","tier":1,"ja":"思ったことを伝えたら空気が和らぐ。気持ちを言葉にすると変わるかも。","en":"Speaking openly may ease the awkwardness. Honest communication could help."},{"mode":"sex","tier":1,"ja":"好みが違っても意外な発見がある。笑い飛ばせたらそれも思い出。","en":"Different preferences may lead to discoveries. Laughing about it may make a good memory."},{"mode":"sex","tier":1,"ja":"好みが違っても意外な発見がある。気持ちを言葉にすると変わるかも。","en":"Different preferences may lead to discoveries. Honest communication could help."},{"mode":"sex","tier":1,"ja":"ロマンチックな演出がちょっと空回り。笑い飛ばせたらそれも思い出。","en":"A romantic plan may comically misfire. Laughing about it may make a good memory."},{"mode":"sex","tier":1,"ja":"ロマンチックな演出がちょっと空回り。気持ちを言葉にすると変わるかも。","en":"A romantic plan may comically misfire. Honest communication could help."},{"mode":"sex","tier":1,"ja":"大人の駆け引きがなぜか心理戦に。笑い飛ばせたらそれも思い出。","en":"Flirting may turn into a silly mind game. Laughing about it may make a good memory."},{"mode":"sex","tier":1,"ja":"大人の駆け引きがなぜか心理戦に。気持ちを言葉にすると変わるかも。","en":"Flirting may turn into a silly mind game. Honest communication could help."},{"mode":"sex","tier":1,"ja":"緊張して飲み物をこぼすかも。笑い飛ばせたらそれも思い出。","en":"Nerves may lead to a spilled drink. Laughing about it may make a good memory."},{"mode":"sex","tier":1,"ja":"緊張して飲み物をこぼすかも。気持ちを言葉にすると変わるかも。","en":"Nerves may lead to a spilled drink. Honest communication could help."},{"mode":"sex","tier":1,"ja":"いったん深呼吸して笑い合える。笑い飛ばせたらそれも思い出。","en":"You may laugh after a deep breath. Laughing about it may make a good memory."},{"mode":"sex","tier":1,"ja":"いったん深呼吸して笑い合える。気持ちを言葉にすると変わるかも。","en":"You may laugh after a deep breath. Honest communication could help."},{"mode":"sex","tier":1,"ja":"お互いの境界線を知る良い機会に。笑い飛ばせたらそれも思い出。","en":"You may learn to respect each other’s boundaries. Laughing about it may make a good memory."},{"mode":"sex","tier":1,"ja":"お互いの境界線を知る良い機会に。気持ちを言葉にすると変わるかも。","en":"You may learn to respect each other’s boundaries. Honest communication could help."},{"mode":"sex","tier":1,"ja":"背伸びしない関係が心地よいかも。笑い飛ばせたらそれも思い出。","en":"Keeping things simple may feel better. Laughing about it may make a good memory."},{"mode":"sex","tier":1,"ja":"背伸びしない関係が心地よいかも。気持ちを言葉にすると変わるかも。","en":"Keeping things simple may feel better. Honest communication could help."},{"mode":"sex","tier":0,"ja":"甘い雰囲気が突然お菓子の話に変わる。でもその展開も楽しそう！","en":"Sweet talk may become a discussion of desserts. But that could be fun too!"},{"mode":"sex","tier":0,"ja":"甘い雰囲気が突然お菓子の話に変わる。予想外の友情が芽生えるかも。","en":"Sweet talk may become a discussion of desserts. An unexpected friendship may bloom."},{"mode":"sex","tier":0,"ja":"壁ドンよりも道案内が得意な2人。でもその展開も楽しそう！","en":"You may be better at directions than dramatic flirting. But that could be fun too!"},{"mode":"sex","tier":0,"ja":"壁ドンよりも道案内が得意な2人。予想外の友情が芽生えるかも。","en":"You may be better at directions than dramatic flirting. An unexpected friendship may bloom."},{"mode":"sex","tier":0,"ja":"目が合った瞬間に同時に吹き出す。でもその展開も楽しそう！","en":"You may burst out laughing at the same time. But that could be fun too!"},{"mode":"sex","tier":0,"ja":"目が合った瞬間に同時に吹き出す。予想外の友情が芽生えるかも。","en":"You may burst out laughing at the same time. An unexpected friendship may bloom."},{"mode":"sex","tier":0,"ja":"ロマンチックな映画で別々の場面に感動。でもその展開も楽しそう！","en":"You may love totally different scenes in a romance film. But that could be fun too!"},{"mode":"sex","tier":0,"ja":"ロマンチックな映画で別々の場面に感動。予想外の友情が芽生えるかも。","en":"You may love totally different scenes in a romance film. An unexpected friendship may bloom."},{"mode":"sex","tier":0,"ja":"気まずさを笑いに変える才能が開花。でもその展開も楽しそう！","en":"You may discover a gift for laughing off awkwardness. But that could be fun too!"},{"mode":"sex","tier":0,"ja":"気まずさを笑いに変える才能が開花。予想外の友情が芽生えるかも。","en":"You may discover a gift for laughing off awkwardness. An unexpected friendship may bloom."},{"mode":"sex","tier":0,"ja":"無理に盛り上げないのが正解かも。でもその展開も楽しそう！","en":"Not forcing chemistry may be the best call. But that could be fun too!"},{"mode":"sex","tier":0,"ja":"無理に盛り上げないのが正解かも。予想外の友情が芽生えるかも。","en":"Not forcing chemistry may be the best call. An unexpected friendship may bloom."},{"mode":"sex","tier":0,"ja":"キザなセリフがなぜか早口言葉に。でもその展開も楽しそう！","en":"A smooth line may turn into a tongue twister. But that could be fun too!"},{"mode":"sex","tier":0,"ja":"キザなセリフがなぜか早口言葉に。予想外の友情が芽生えるかも。","en":"A smooth line may turn into a tongue twister. An unexpected friendship may bloom."},{"mode":"sex","tier":0,"ja":"好みのデートが真逆で作戦会議に。でもその展開も楽しそう！","en":"Opposite date tastes may require a planning meeting. But that could be fun too!"},{"mode":"sex","tier":0,"ja":"好みのデートが真逆で作戦会議に。予想外の友情が芽生えるかも。","en":"Opposite date tastes may require a planning meeting. An unexpected friendship may bloom."},{"mode":"sex","tier":0,"ja":"意外と最高の友達コンビになるかも。でもその展開も楽しそう！","en":"You might make an amazing friendship duo. But that could be fun too!"},{"mode":"sex","tier":0,"ja":"意外と最高の友達コンビになるかも。予想外の友情が芽生えるかも。","en":"You might make an amazing friendship duo. An unexpected friendship may bloom."},{"mode":"sex","tier":0,"ja":"お互いを尊重することで良い関係に。でもその展開も楽しそう！","en":"Respect may help you build a positive connection. But that could be fun too!"},{"mode":"sex","tier":0,"ja":"お互いを尊重することで良い関係に。予想外の友情が芽生えるかも。","en":"Respect may help you build a positive connection. An unexpected friendship may bloom."}];
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  let mode = 'love';
+  let currentPct = null;
+  let currentForecast = null;
+  let special = localStorage.getItem('crazy-love-special') !== 'off';
+  const tierOf = pct => pct >= 90 ? 4 : pct >= 70 ? 3 : pct >= 50 ? 2 : pct >= 30 ? 1 : 0;
+  let used = [];
+  function selectForecast() {
+    const candidates = FUTURES.filter(f => f.mode === mode && f.tier === tierOf(currentPct));
+    if (used.length >= candidates.length) used = [];
+    const remaining = candidates.filter(f => !used.includes(f.ja));
+    const chosen = remaining[Math.floor(Math.random() * remaining.length)];
+    used.push(chosen.ja);
+    currentForecast = chosen;
+    $('futureText').textContent = chosen.ja;
+    $('futureEnglish').textContent = chosen.en;
+    $('futureHeading').textContent = mode === 'love' ? '🔮 2人の恋愛未来予言' : '🔥 2人の大人の未来予言';
+    $('futureSubheading').textContent = mode === 'love' ? 'Your Love Future' : 'Your Romantic Chemistry Future';
+  }
+  document.querySelectorAll('.mode').forEach(b => b.addEventListener('click', () => {
+    mode = b.dataset.mode;
+    document.querySelectorAll('.mode').forEach(x => x.classList.toggle('active', x === b));
+    $('result').classList.remove('show'); currentPct = null; used = [];
+  }));
+  function hearts(){
+    const icons=['💗','💕','💖','💘','❤️‍🔥','💋'];
+    for(let i=0;i<95;i++){
+      const h=document.createElement('span'); h.className='heart';
+      h.textContent=icons[Math.floor(Math.random()*icons.length)];
+      h.style.left=Math.random()*100+'vw';
+      h.style.fontSize=(14+Math.random()*28)+'px';
+      h.style.animationDuration=(2.5+Math.random()*3.5)+'s';
+      h.style.animationDelay=(Math.random()*2)+'s';
+      h.style.setProperty('--drift',(Math.random()*200-100)+'px');
+      document.body.append(h); setTimeout(()=>h.remove(),6500);
     }
   }
-}
+  function diagnose(){
+    const a=$('name1').value.trim(), b=$('name2').value.trim();
+    if(!a||!b){$('form').reportValidity();return;}
+    const isShin=a==='しんちゃん'||b==='しんちゃん';
+    const pct=special && isShin ? 100 : Math.floor(Math.random()*101);
+    currentPct = pct; used=[];
+    $('resultLabel').textContent=mode==='love'?'💕 恋愛相性 / Love Compatibility':'💋 SEX相性 / Sexual Compatibility';
+    $('percent').textContent=pct+'%';
+    selectForecast();
+    $('result').classList.remove('show'); void $('result').offsetWidth;
+    $('result').classList.add('show');
+    hearts();
+  }
+  $('form').addEventListener('submit',e=>{e.preventDefault();diagnose();});
+  $('again').addEventListener('click',diagnose);
+  $('futureAgain').addEventListener('click',()=>{if(currentPct!==null)selectForecast();});
+  async function shareLove(type){
+    if(currentPct===null || !currentForecast)return;
+    const label=$('resultLabel').textContent.trim();
+    const url='https://crazy-love-test.github.io/';
+    const message=`💕 Crazy Love Test 💋\n${label}: ${currentPct}%\n🔮 ${currentForecast.ja}\n${currentForecast.en}\n${url}`;
+    if(type==='x'){
+      window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(message),'_blank','noopener');
+    }else if(type==='line'){
+      window.open('https://line.me/R/msg/text/?'+encodeURIComponent(message),'_blank','noopener');
+    }else if(navigator.share){
+      try{await navigator.share({title:'Crazy Love Test 💋',text:message,url});}
+      catch(e){if(e.name!=='AbortError')alert('共有できませんでした / Could not share');}
+    }else{
+      try{await navigator.clipboard.writeText(message);alert('診断結果をコピーしました！');}
+      catch(e){prompt('診断結果をコピーしてください',message);}
+    }
+  }
+  document.querySelectorAll('[data-share]').forEach(b=>b.addEventListener('click',()=>shareLove(b.dataset.share)));
+  let taps=0,last=0;
+  $('title').addEventListener('click',()=>{
+    if(Date.now()-last>2500)taps=0; last=Date.now();
+    if(++taps>=7){$('admin').classList.toggle('show');taps=0;update();}
+  });
+  function update(){$('status').textContent='しんちゃん100%: '+(special?'ON':'OFF');}
+  $('toggle').addEventListener('click',()=>{
+    special=!special;localStorage.setItem('crazy-love-special',special?'on':'off');update();
+  });
+})();
 </script>
-  
-
-
-<div style="text-align:center; margin:25px 0;"><img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fcrazy-love-test.github.io%2F&label=VISITORS&icon=github&color=%23000&message=&style=flat&tz=UTC">
-
-<a href="https://550909.com/?f2927217" target="_blank" rel="nofollow sponsored">
-  <img src="IMG_1714.jpeg" alt="PR マッチングサービス" style="width:100%;max-width:640px;height:auto;">
-</a>
-  
-</div>  
 </body>
 </html>
